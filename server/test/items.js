@@ -12,7 +12,15 @@ describe("Items Test",()=>{
 
         chai.request(app).get("/items").end((err,res)=>{
             res.should.have.status(200);
-            //res.body.should.be.a("array");
+            res.body.should.be.a("array");
+        });
+        
+    });
+    it("should add new items",()=>{  
+
+        chai.request(app).post("/items").end((err,res)=>{
+            res.should.have.status(200);
+            res.body.should.be.a("array");
         });
         
     });

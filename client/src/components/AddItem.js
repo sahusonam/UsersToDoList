@@ -4,7 +4,7 @@ export const AddItem = (props) => {
     return(
         <div>
         <form>
-            <input focus="true" type="text" value={props.newItem} onChange={props.handleOnchangeInput} />
+            <input focus="true" type="text" value={props.newItem} onChange={props.handleOnChangeInput} />
             <input type="button" onClick={props.handleSubmit} value = "Add" />
         </form>
         </div>
@@ -13,6 +13,6 @@ export const AddItem = (props) => {
 
 AddItem.propTypes = {
     newItem: PropTypes.string,
-    handleOnchangeInput: PropTypes.func.isRequired,
+    handleOnChangeInput: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired
 }
