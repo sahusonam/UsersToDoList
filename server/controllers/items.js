@@ -1,5 +1,4 @@
 import { status } from "../constants.js";
-import { v4 as uuid } from 'uuid';
 
 const items = [{
     id:1,
@@ -19,7 +18,13 @@ export const getItemsList = (req, res) => {
 }
 
 export const addNewItem = (req,res) => {
-    const newItem = { id: uuid(),
+    if(!req.body.task)
+    {
+        res.send(items);    
+    }
+    let itemIds = items.map(item => item.id);
+    let newId = itemIds.length > 0 ? Math.max.apply(Math, itemIds) + 1 : 1;
+    const newItem = { id: newId,
                       task: req.body.task,
                       status: status.PENDING
             }

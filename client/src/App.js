@@ -1,8 +1,6 @@
-
-import { useState } from 'react';
 import Tasks from "./Tasks";
-import './App.css';
 import {TodoList} from './components/TodoList.js'
+import { AddItem } from './components/AddItem';
 
 class App extends Tasks {
   state = { tasks: [], currentTask: "" };
@@ -10,7 +8,9 @@ class App extends Tasks {
     const { tasks } = this.state;
     return (
       <div className="App">
-        <h1>todo-app</h1>
+
+        <h1>Todo List</h1>
+        <AddItem handleSubmit={ this.handleSubmit } handleOnchangeInput={this.handleOnChange} newItem={this.state.currentTask} ></AddItem>
         <TodoList todosList={ tasks}  />
       </div>
     );
