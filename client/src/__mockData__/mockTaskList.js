@@ -9,4 +9,9 @@ export const mockTaskList = [{
     status:"Pending"
 
   },
+  {
+    id: 3,
+    task: "study",
+    status: "Completed"
+  },
 ];
