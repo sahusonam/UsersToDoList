@@ -5,17 +5,38 @@ import { TodoItem } from './TodoItem'
 export const TodoList = props => { 
 
     return (
-  
-        <ul className="todoList">
-            {props.todosList.map(eachTask =>
+        <div className='row'>
+            <div className='col-6'>
+                <h2>Completed Task</h2>
                 
-                <TodoItem key={eachTask.id}
-                    { ...eachTask}
-                />
-                )}
+                <ul className="todoList">
+                    {props.todosList.filter(item => item.status === 'Completed').map(eachTask =>
+                        
+                        <TodoItem key={eachTask.id}
+                            { ...eachTask}
+                        />
+                        )}
 
-            
-       </ul>
+                    
+            </ul>
+            </div>
+
+            <div className='col-6'>
+                <h2>Pending task</h2>
+                <ul className="todoList">
+                    {props.todosList.filter(item => item.status === 'Pending').map(eachTask =>
+                        
+                        <TodoItem key={eachTask.id}
+                            { ...eachTask}
+                        />
+                        )}
+
+                    
+                </ul>
+            </div>
+
+  
+       </div>
     )
 }
 
