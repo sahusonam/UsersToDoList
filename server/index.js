@@ -1,7 +1,7 @@
-import express from "express";
-import bodyParser from 'body-parser';
-import cors from "cors";
-import itemsRoutes from "./routes/items.js";
+const express = require("express");
+const bodyParser = require('body-parser');
+const cors =require("cors");
+const itemsRoutes = require("./routes/items.js");
 
 const app = express(); 
 
@@ -14,3 +14,5 @@ app.use("/items",itemsRoutes);
 app.get("/", (req, res) => res.send("Welcome to the TODO API!"));
 
 app.listen(port,()=> console.log(`Listening on port ${port}... `));
+
+module.exports = app;
