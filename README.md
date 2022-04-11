@@ -65,7 +65,7 @@ Steps to implement the update functionality
     - new method in 'controllers/items.js' - to handle the update logic & return the updated list.
 
 2) Client side:
-    - Component update: add checkboxes within TodoItem.js when we are rendering the todo's items in <li>
+    - Component update: add checkboxes within TodoItem.js when we are rendering the todo's items.
     - Event onChange of checkbox will trigger a props method  which will send a request to backend.
     - backend response will update the state & re-render the component.
 
