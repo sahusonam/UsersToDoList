@@ -48,8 +48,8 @@ Design of the application is:
     
 
 Improvement areas:
-    1) We can make use of Redux for state management. This can be done by creating a redux folder (including thunk.js, slice.js &  type.js).
 
+    1) We can make use of Redux for state management. This can be done by creating a redux folder (including thunk.js, slice.js &  type.js).
     With the use of Redux we can have centralized state management system i.e store & ensuring that a given component re-renders only when its data has actually changed.
 
     2) By installing babel, we can make use of tsx files.
